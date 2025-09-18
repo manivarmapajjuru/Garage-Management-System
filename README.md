@@ -1,21 +1,19 @@
 # Garage-Management-System
 
-#### AmountDistributionHandler apex class   #############
-
+#### AmountDistributionHandler apex class
 
 public class AmountDistributionHandler {
-
-   
 
     public static void amountDist(list<Appointment__c> listApp){
 
         list<Service_records__c> serList = new list <Service_records__c>();
 
-       
+
 
         for(Appointment__c app : listApp){
 
-            if(app.Maintenance_service__c == true && app.Repairs__c == true && app.Replacement_Parts__c == true){
+mggfch
+if(app.Maintenance_service**c == true && app.Repairs**c == true && app.Replacement_Parts\_\_c == true){
 
                 app.Service_Amount__c = 10000;
 
@@ -23,13 +21,13 @@ public class AmountDistributionHandler {
 
             else if(app.Maintenance_service__c == true && app.Repairs__c == true){
 
-                app.Service_Amount__c = 5000;    
+                app.Service_Amount__c = 5000;
 
             }
 
             else if(app.Maintenance_service__c == true && app.Replacement_Parts__c == true){
 
-                app.Service_Amount__c = 8000;    
+                app.Service_Amount__c = 8000;
 
             }
 
@@ -57,7 +55,7 @@ public class AmountDistributionHandler {
 
             }
 
-           
+
 
     }
 
@@ -65,25 +63,19 @@ public class AmountDistributionHandler {
 
 }
 
-
-
-
-########## AmountDistribution     apex trigger  #########
-trigger AmountDistribution on Appointment__c (before insert, before update) {
-
-   
+########## AmountDistribution apex trigger #########
+trigger AmountDistribution on Appointment\_\_c (before insert, before update) {
 
     if(trigger.isbefore && trigger.isinsert || trigger.isupdate){
 
         AmountDistributionHandler.amountDist(trigger.new);
 
-       
+
 
     }
 
-
 }
 
-********************* 
-demo link:https://drive.google.com/file/d/1Z3BBomUHD789SKW_pZ3wGR386fWXDXxh/view?usp=sharing
+---
 
+demo link:https://drive.google.com/file/d/1Z3BBomUHD789SKW_pZ3wGR386fWXDXxh/view?usp=sharing
